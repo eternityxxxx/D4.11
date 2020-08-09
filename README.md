@@ -15,10 +15,10 @@ django-test
 
 #### Таблица новой модели:
 | Издательства | Список книг |
-|--------------:||:---------------|
-| Феникс | Медный всадник, Граф Нулин, The Hitchhiker's Guide to the Galaxy, The Catcher in the Rye |
-| Фламинго | Руслан и Людмила, Новь, So Long, and Thanks for All the Fish |
-| Ласточка | The Growth of the Soil, Ревизор |
+|:------------:|:----------------------------------------------------------------------------------------:|
+| Феникс       | Медный всадник, Граф Нулин, The Hitchhiker's Guide to the Galaxy, The Catcher in the Rye |
+| Фламинго     | Руслан и Людмила, Новь, So Long, and Thanks for All the Fish                             |
+| Ласточка     | The Growth of the Soil, Ревизор                                                          |
 
 
 #### Для проверки задания:
