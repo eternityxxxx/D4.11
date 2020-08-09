@@ -2,6 +2,7 @@ from django.template import loader
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from p_library.models import Book, Author, Publisher
+from django.db.models import Count
 
 
 def index(request):
@@ -27,10 +28,14 @@ def authors_list(request):
     return HttpResponse(authors)
 
 
-def publishers_list(request):
-    publishers = Publisher.objects.all()
+def publishers(request):
+    template = loader.get_template("publisher.html")
+    publishers = Publisher.objects.annotate(books_count=Count('book_publisher'))
+    data = {
+        "publishers": publishers, 
+    }
 
-    return HttpResponse(publishers)    
+    return HttpResponse(template.render(data))    
 
 
 def book_increment(request):
@@ -66,3 +71,9 @@ def book_decrement(request):
         return redirect('/index/')
     else:
         return redirect('/index/')
+
+
+def hello_message(request):
+    message = 'Welcome to my library!'
+
+    return HttpResponse(message)

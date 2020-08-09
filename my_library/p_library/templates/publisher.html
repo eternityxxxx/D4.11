@@ -9,13 +9,17 @@
 <body>
     {% load bootstrap4 %}
     {% bootstrap_css %}
-
-    <ul class="list-group">
-        <h3>{{ publisher.name }}</h3>
-        {% for publisher in publishers %}
-        <h3>{{ publisher.name }}</h3>
-        <li class="list-group-item">{{ publisher.book }} {{ publisher.book.ISBN }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container-fluid">
+        <ul class="list-group">
+            {% for publisher in publishers %}
+            <h3 class="text-center mt-5">Издательство: {{ publisher.name }}</h3>
+            <div class="wrap d-flex flex-column align-items-center">
+                {% for book in publisher.book_publisher.all %}
+                <li class="list-group-item list-group-item-primary mt-3 col-6 text-center">{{ book.title }} || {{ book.ISBN }} || {{ book.author }}</li>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
