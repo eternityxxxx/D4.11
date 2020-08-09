@@ -24,7 +24,13 @@ def books_list(request):
 def authors_list(request):
     authors = Author.objects.all()
 
-    return HttpResponse(authors)    
+    return HttpResponse(authors)
+
+
+def publishers_list(request):
+    publishers = Publisher.objects.all()
+
+    return HttpResponse(publishers)    
 
 
 def book_increment(request):

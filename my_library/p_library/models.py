@@ -2,6 +2,13 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 
+class Publisher(models.Model):
+    name = models.TextField(verbose_name=_("Название"))
+
+    def __str__(self):
+        return self.name
+
+
 class Author(models.Model):
     full_name = models.TextField(verbose_name=_("Имя автора"))
     birth_year = models.PositiveSmallIntegerField(verbose_name=_("Год рождения"))
@@ -20,15 +27,7 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name=_("Цена"))
 
     author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name=_("Автор"), related_name="book_author")
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE, verbose_name=_("Издательство"), related_name="book_publisher")
 
     def __str__(self):
         return self.title
-
-
-class Publisher(models.Model):
-    name = models.TextField(verbose_name=_("Название"))
-    
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, verbose_name=_("Книга"), related_name="publisher_book")
-
-    def __str__(self):
-        return self.name

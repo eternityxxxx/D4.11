@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Издательства</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+</head>
+<body>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+
+    <ul class="list-group">
+        <h3>{{ publisher.name }}</h3>
+        {% for publisher in publishers %}
+        <h3>{{ publisher.name }}</h3>
+        <li class="list-group-item">{{ publisher.book }} {{ publisher.book.ISBN }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
