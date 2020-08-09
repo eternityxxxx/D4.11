@@ -13,7 +13,7 @@ django-test
 Подключен при помощи билиотеки django-bootstrap4, ознакомиться с ней можно [тут.](https://django-bootstrap4.readthedocs.io/en/latest/index.html)
 
 
-#### Таблица новой модели:
+#### Таблица данных новой модели Publisher:
 | Издательства | Список книг |
 |:------------:|:----------------------------------------------------------------------------------------:|
 | Феникс       | Медный всадник, Граф Нулин, The Hitchhiker's Guide to the Galaxy, The Catcher in the Rye |
@@ -22,10 +22,7 @@ django-test
 
 
 #### Для проверки задания:
-1. Стянуть репозиторий к себе:
-```
-    git clone https://github.com/eternityxxxx/D4.11.git
-```
+1. Стянуть репозиторий к себе;
 2. Установить зависимости из requirements.txt:
 ```
     pip install -r requirements.txt
